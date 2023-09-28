@@ -1,4 +1,12 @@
 {
+  "name": "javascriptobj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "workObj.js",
+  "type": "module",
+  "scripts": {
+    "workObj": "node ./src/workObj.js"
+  },
   "dependencies": {
     "chalk": "^5.3.0"
   }

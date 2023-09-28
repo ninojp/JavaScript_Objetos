@@ -1,4 +1,4 @@
-const pessoas = require('./objetos');
+import tudo from "../arqvs/objetos.js";
 // const {...pessoas} = require('./objetos'); //me parece igual ao acima
 // const { pessoa, usuario, cliente, cliente2 } = require('./objetos');
 const nomeObjeto = {
@@ -51,5 +51,8 @@ console.log(arrayValues);//Cria um ARRAY com somente os VALORES das propriedades
 // Faz a leitura do ARRAY com a lista CHAVES das propriedades do obj
 //e mostra no console cada VALOR de cada propriedade do objeto
 arrayKeys.forEach((chave) => console.log(nomeObjeto[chave]));
+
+console.log('\n');
+console.log(tudo);
 
 
