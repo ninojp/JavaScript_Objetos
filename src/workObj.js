@@ -4,10 +4,11 @@ import {nomeObjeto, pessoaX, usuario, cliente, pessoa} from "../arqvs/objetos.js
 // import { pessoa2, pessoaX, usuario2 } from "../arqvs/objetos2.mjs"; //Funciona
 // import pessoa from "../arqvs/objetos2.mjs"; //Funciona
 // import { soma, multiplica, subtrai } from "../arqvs/objetos2.mjs";// Funciona
-
+//---------------------------------------------------------------------------------------------
 // IMPORTAÇÃO, no formato tradicional CJS(Common JavaScript)
 // const {...pessoas} = require('./objetos'); //me parece igual ao acima
 // const { pessoa, usuario, cliente, cliente2 } = require('./objetos');
+//=============================================================================================
 
 // console.log(pessoas, typeof pessoas); //Exibe um objeto, com outros {}object dentro
 // console.log(pessoas.usuario.email); //Exibe o VALOR da CHAVE:email
@@ -27,6 +28,7 @@ import {nomeObjeto, pessoaX, usuario, cliente, pessoa} from "../arqvs/objetos.js
 // console.log(nomeObjeto);
 // console.log(pessoaCliente);
 //----------------------------------------------------------------------------------------
+
 // Nessa aula, você aprendeu:
 // Que objeto é um tipo de dado que reflete uma abstração dos objetos da vida real;
 // Que a estrutura de um objeto literal no JavaScript é composta por pares de chave: valor separados por vírgula, dentro de chaves { };
@@ -34,6 +36,7 @@ import {nomeObjeto, pessoaX, usuario, cliente, pessoa} from "../arqvs/objetos.js
 // Que para adicionar e manipular dados em um objeto precisamos saber como acessar suas propriedades.
 //======================================================================================
 
+// EXERCÍCIOS PROPOSTOS
 // Exemplo para criar um array apartir das propriedades de um objeto.
 console.log(chalk.bgBlue.white('Cria um ARRAY das KEYs, apartir das propriedades(key:value) do objeto'));
 const arrayKeys = Object.keys(nomeObjeto);
@@ -58,11 +61,61 @@ pessoaX.Dependentes.push(cliente);
 // pessoaX.Dependentes = [cliente, pessoa]; //Cria um array com 2 objetos dentro
 console.log(pessoaX);
 // const maisJovem = pessoaX.Dependentes.filter(dependente => dependente.idade===42)
-const filtro = 29
+const filtro = 29; //
 const maisJovem = pessoaX.Dependentes.filter(dependente => dependente.idade <= filtro)
 console.log(maisJovem);
 // console.log(maisJovem[0]);
 // console.log(maisJovem[1]);
+console.log('\n');
+//------------------------------------------------------------------------------------------
+
+// Adicionar um Método, Função como propriedade de um objeto
+console.log(chalk.bgBlue.white('Adicionar um Método, Função como propriedade de um objeto'));
+nomeObjeto.saldo = 100;
+nomeObjeto.depositar = function (valorRecebido) {this.saldo += valorRecebido}; //não aceitou arrow function
+console.log(nomeObjeto);
+nomeObjeto.depositar(50);
+console.log(nomeObjeto);
+console.log('\n');
+//------------------------------------------------------------------------------------------
+
+// Cópia e copia de Referência
+// A variável objPersonagem2 não fez uma cópia do objeto original, 
+//apenas serviu como referência para o objeto original objPersonagem. 
+// Assim, qualquer alteração em qualquer um dos objetos altera ambos.
+// Isso porque o JavaScript, quando trabalha com objetos, acessa os valores deles fazendo referência ao original.
+//mas não cria uma cópia. Já o acesso por cópia funciona com tipos primitivos (string, number, booleano, null, symbol):
+console.log(chalk.bgBlue.white('Copia por Referência'));
+const objPersonagem = {
+    nome: "Gandalf",
+    classe: "mago",
+    nivel: "20"
+   }
+const objPersonagem2 = objPersonagem
+objPersonagem2.nome = "Gandalf, o Cinzento"
+console.log(objPersonagem.nome) //Gandalf, o Cinzento
+console.log(objPersonagem2.nome) //Gandalf, o Cinzento
+
+//Como podemos contornar esse comportamento quando criamos objetos?
+// Além de utilizar a notação literal, objetos também podem ser criados através do método Object.create():
+console.log(chalk.bgBlue.white('Cópia, Criando um novo obj independente'));
+const objPersonagens = {
+    nome: "Gandalf",
+    classe: "mago",
+    nivel: "20"
+   }
+const objPersonagens2 = Object.create(objPersonagens)
+objPersonagens2.nome = "Gandalf, o Cinzento"
+console.log(objPersonagens.nome) //Gandalf
+console.log(objPersonagens2.nome) //Gandalf, o Cinzento
+console.log('\n');
+//------------------------------------------------------------------------------------------
+
+// Nessa aula, você aprendeu:
+// Que para manipular objetos literais podemos utilizar os métodos do JavaScript para cada tipo de dado;
+// Que os valores em um objeto podem ser tipos primitivos (strings, números, booleanos e null), arrays ou outros objetos;
+// Que além das propriedades, também podemos atribuir funções que dão comportamento a um objeto.
+//==========================================================================================================================
 
 
 // Novos testes, não deu depois vejo
