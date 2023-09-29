@@ -10,6 +10,11 @@ const nomeObjeto = {
   curriculo: {
       escolaridade: "segundo grau completo",
       experiencia: "na area de T.I"
+  },
+  dependentes: {
+    nome:"Samia Maria",
+    parentesco:"filha",
+    dataNasc:"04/01/2014"
   }
 }
 const pessoaX = {
@@ -22,13 +27,37 @@ const pessoaX = {
     estado:"ES"
 }
 let usuario = {
-    nome:"Bruce2 Banner2",
-    dataNascimento:"25/01/1980",
-    carteiraIdentidade:"997776-X",
-    email:"profbanner@email.com",
-    telefone:"+552877776666",
-    cidade:"Cachoeiro de Itapemirim",
-    estado:"ES"
+    nome: 'Nino',
+    idade: 42,
+    altura: 1.79,
+    peso: '76Kg',
+    masculino: true,
+    telefones: [ '(48) 982666-666', 323334566 ],
+    curriculo: {
+      escolaridade: 'segundo grau completo',
+      experiencia: 'na area de T.I'
+    },
+    saldo: 150,
+    depositar:function (valorRecebido) {this.saldo += valorRecebido},
+    dependentes: [
+      {
+        nome: 'Nino2',
+        idade: 43,
+        cpf: '12543652266',
+        email: 'sem@email.com'
+      },
+      {
+        nome: 'Andre',
+        idade: 36,
+        cpfCliente: '12543652266',
+        email: 'andre@email.com'
+      },
+      {
+        nome: 'Sara Silva',
+        parentesco: 'filha',
+        dataNasc: '20/03/2011'
+      }
+    ]
 }
 let cliente = {
     nomeCliente:"Andre",
